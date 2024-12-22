@@ -1,0 +1,92 @@
+/* General styles for the body and particles background */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    z-index: -1;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Section Styles */
+  .sections, .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .section-card, .project-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+  }
+  
+  .section-card:hover, .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .section-card h3, .project-card h3 {
+    margin-top: 0;
+    color: #6a11cb;
+    font-weight: bold;
+  }
+  
+  .section-card p, .project-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: none;
+  }
+  
+  /* View Projects Button */
+  .view-projects-btn {
+    display: inline-block;
+    background-color: #2575fc;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .view-projects-btn:hover {
+    background-color: #6a11cb;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  

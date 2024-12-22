@@ -3,333 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Particle Animation</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
-      z-index: -1; /* Ensures particles are behind all content */
-    }
-
-    header {
-      position: relative; /* Makes header sit on top of particles */
-      text-align: center;
-      padding: 50px;
-      z-index: 1; /* Ensures header is visible above particles */
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin: 10px 0 0;
-      animation: fadeIn 2s ease-in-out 1s;
-    }
-
-    section {
-      position: relative;
-      z-index: 1; /* Ensures content is visible above particles */
-      margin: 20px auto;
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-      border-radius: 10px;
-      max-width: 600px;
-    }
-
-    section + section {
-      margin-top: 40px;
-    }
-
-    /* Button Style */
-    .projects-btn {
-      background-color: #2575fc;
-      color: white;
-      font-size: 1.2rem;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .projects-btn:hover {
-      background-color: #6a11cb;
-      transform: scale(1.05);
-    }
-
-    /* Modal Style */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.8);
-      transition: opacity 0.5s ease;
-    }
-
-    .modal-content {
-      background-color: #333;
-      color: white;
-      margin: 10% auto;
-      padding: 30px;
-      border-radius: 15px;
-      width: 80%;
-      max-width: 700px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-      animation: slideUp 0.5s ease-out;
-    }
-
-    .close {
-      color: white;
-      font-size: 30px;
-      font-weight: bold;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-
-    .close:hover {
-      color: #f44336;
-    }
-
-    /* Project List Style */
-    .modal-content h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .modal-content ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .modal-content li {
-      margin: 15px 0;
-      font-size: 1.2rem;
-    }
-
-    .modal-content li strong {
-      color: #2575fc;
-    }
-
-    .modal-content p {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    /* Smooth scrolling */
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      height: 100vh;
-      overflow-y: auto;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideUp {
-      0% {
-        transform: translateY(50%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  </style>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="particles-js"></div>
-
   <header>
     <h1>Omkar Nayak</h1>
     <p>BCA 5th-semester student with a passion for software development</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>BCA 5th-semester student at KLE Technological University with a solid understanding of Java, C, C++, and SQL.</p>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <p>KLE Technological University - Bachelor of Computer Applications (BCA)</p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <p>Java, C, C++, SQL, Web Development (HTML, CSS, JavaScript), Flutter</p>
-  </section>
-
-  <section>
-    <h2>Soft Skills</h2>
-    <p>Problem-solving, Teamwork, Communication, Time Management</p>
-  </section>
-
-  <section>
-    <button class="projects-btn" onclick="openModal()">View My Projects</button>
-  </section>
-
-  <!-- Modal -->
-  <div id="projectsModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>My Projects</h3>
-      <ul>
-        <li><strong>Health and Fitness Website (MERN Stack) - Role: Front-end Developer & Designer</strong></li>
-        <p>Designed and developed a responsive user interface using React.js. Focused on layout design and seamless user experience.</p>
-        
-        <li><strong>Student Performance using Decision Tree - Role: Designer & Visualization</strong></li>
-        <p>Designed and visualized decision tree models to analyze student performance. Focused on data-driven insights for academic improvement.</p>
-        
-        <li><strong>Phishing Detection using ML & Big Data Analytics (Ongoing) - Role: Designer</strong></li>
-        <p>Collaborating on a group project focused on designing a system to detect phishing attacks using machine learning and big data techniques. Currently in the design and implementation phase to improve detection accuracy and scalability.</p>
-        
-        <li><strong>JavaScript30 Projects</strong></li>
-        <p>A collection of 30 small projects showcasing core JavaScript skills, including DOM manipulation, event handling, and interactive web components. Completed as part of the JavaScript30 course by Wes Bos.</p>
-      </ul>
+  <section class="sections">
+    <div class="section-card">
+      <h3>About Me</h3>
+      <p>BCA 5th-semester student at KLE Technological University with a solid understanding of Java, C, C++, and SQL.</p>
     </div>
-  </div>
 
-  <!-- Particles.js CDN -->
+    <div class="section-card">
+      <h3>Education</h3>
+      <p>KLE Technological University - Bachelor of Computer Applications (BCA)</p>
+    </div>
+
+    <div class="section-card">
+      <h3>Skills</h3>
+      <p>Java, C, C++, SQL, Web Development (HTML, CSS, JavaScript), Flutter</p>
+    </div>
+
+    <div class="section-card">
+      <h3>Soft Skills</h3>
+      <p>Problem-solving, Teamwork, Communication, Time Management</p>
+    </div>
+  </section>
+
+  <section class="view-projects">
+    <a href="projects.html" class="view-projects-btn">View My Projects</a>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    particlesJS('particles-js', {
-      "particles": {
-        "number": {
-          "value": 100,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#ffffff"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false
-        },
-        "size": {
-          "value": 3,
-          "random": true
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#ffffff",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 5,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 400,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
-    });
-
-    // Modal functionality
-    function openModal() {
-      document.getElementById("projectsModal").style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("projectsModal").style.display = "none";
-    }
+    particlesJS.load('particles-js', 'particles-config.json');
   </script>
 </body>
 </html>
